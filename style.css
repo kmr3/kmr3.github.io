@@ -1,0 +1,76 @@
+header {
+    display:grid;
+    font-family:'nobel';
+    grid-template-columns:auto 1fr auto;
+    margin:0 auto;
+    max-width:900px;
+    padding:1rem;
+    position:relative;
+    background-color:#f4f4f4;
+    z-index:1
+  }
+  header label {
+    display:none;
+    color:#474a54;
+    font-size:24px;
+    right:4vw
+  }
+  .header_name {
+    font-size:1.5rem;
+    text-decoration:none;
+    color:#474a54
+  }
+  .header_name:hover {
+    text-decoration:none;
+    opacity:0.7
+  }
+  .site-top-nav {
+    grid-column:3/4
+  }
+  .site-top-nav-list {
+    margin:0;
+    padding:0
+  }
+  .site-top-nav-list li {
+    display:inline;
+    font-family:'nobel';
+    font-size:1.2rem;
+    font-weight:400;
+    padding:12px
+  }
+  .site-top-nav-list li a {
+    text-decoration:none;
+    color:#474a54;
+    transition:.3s
+  }
+  .site-top-nav-list li a:hover {
+    opacity:0.8
+  }
+  #navbar-check {
+    display:none
+  }
+  .navbar-label-close {
+    display:none
+  }
+body {
+    margin: 0;
+  
+    font-family: sans-serif;
+  
+    color: #474a54;
+  
+    line-height: 1.6em;
+  
+    background-color: #f4f4f4;
+  
+}
+h1.title{
+    text-align: center  ;
+
+    font-size: xx-large;
+}
+h2.subtitle{
+    text-align: center;
+
+    font-size: medium;
+}
