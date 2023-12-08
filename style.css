@@ -3,10 +3,10 @@ header {
     font-family:'nobel';
     grid-template-columns:auto 1fr auto;
     margin:0 auto;
-    max-width:900px;
+    max-width:100%;
     padding:1rem;
     position:relative;
-    background-color:#f4f4f4;
+    background-color:#eeeeee;
     z-index:1
   }
   header label {
@@ -61,7 +61,7 @@ body {
   
     line-height: 1.6em;
   
-    background-color: #f4f4f4;
+    background-color: #F4F4F4;
   
 }
 h1.title{
@@ -76,4 +76,17 @@ h2.subtitle{
 }
 .moji{
   text-align: center  ;
+}
+.container2{
+    background-color: #F4F4F4;
+}
+.container3{
+    background-color: #F4F4F4;
+}
+.container4{
+    background-color: #F4F4F4;
+}
+.hr2 {
+    border-top: 3px solid #d7d5d5;
+    width: 50%;
 }
