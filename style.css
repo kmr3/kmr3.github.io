@@ -90,3 +90,46 @@ h2.subtitle{
     border-top: 3px solid #d7d5d5;
     width: 50%;
 }
+.more-btn {
+    --more-btn-color:#333;/*矢印と文字の色はここで設定*/
+    text-align: center;/*ボタン中央寄せ（右寄せにしたいときはrightに変更）*/
+}
+
+.more-btn a {
+    position: relative; /*位置（ここを基準に）*/
+    padding: 0 3em 0 .5em; /*内側余白調整（上右下左）*/
+    color: var(--more-btn-color);  /*リンク文字色*/
+    text-decoration: none; /*リンク下線を消す*/
+    outline: none; /*枠線を消す*/
+}
+
+.more-btn a::before,
+.more-btn a::after{
+    content: ''; /*矢印部分作成*/
+    position: absolute; /*位置（下線と矢印を配置する）*/
+    background: var(--more-btn-color); /*矢印の色*/
+    height: 1px; /*線の太さ*/
+    transition: all .3s; /*なめらかな動き*/
+}
+
+.more-btn a::before {
+    bottom: -10px; /*下線の下からの距離*/
+    left: 0%; /*左からの距離*/
+    width: 90%; /*ボタンの幅*/
+}
+
+.more-btn a::after {
+    bottom: -5px; /*矢印の下からの距離*/
+    right: 10%; /*右からの距離*/
+    width: 15px; /*矢印部分の幅*/
+    transform: rotate(35deg); /*角度調整*/
+}
+
+/*マウスオーバー時の動き*/
+.more-btn a:hover::before{
+    left: 10%;
+}
+
+.more-btn a:hover::after {
+    right:0%;
+}
