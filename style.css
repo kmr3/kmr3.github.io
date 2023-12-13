@@ -91,6 +91,7 @@ h2.subtitle{
     width: 50%;
 }
 .more-btn {
+    text-decoration:none;
     --more-btn-color:#333;/*矢印と文字の色はここで設定*/
     text-align: center;/*ボタン中央寄せ（右寄せにしたいときはrightに変更）*/
 }
