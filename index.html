@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>村馬 弘一 | 和風ポートフォリオ</title>
+        <title>村馬 弘一</title>
         <link rel="stylesheet" href="style.css" />
         <link
             rel="preload"
@@ -18,32 +18,19 @@
         ></script>
     </head>
     <body>
-        <div id="fusuma-left" class="fusuma"></div>
-        <div id="fusuma-right" class="fusuma"></div>
         <canvas id="sakura-canvas"></canvas>
 
-        <!-- ローディング画面は別ファイルで処理 -->
         <div id="loading-screen">
             <div class="loading-text" id="loadingText">Loading</div>
         </div>
 
         <main id="main-content" class="hidden">
-            <header class="site-header">
+            <section class="section">
                 <h1 class="site-title">村馬 弘一</h1>
-                <nav class="site-nav">
-                    <ul>
-                        <li><a href="#summary">概要</a></li>
-                        <li><a href="#skills">技術</a></li>
-                        <li><a href="#works">実績</a></li>
-                        <li><a href="#contacts">連絡先</a></li>
-                    </ul>
-                </nav>
-            </header>
+            </section>
 
-            <section id="summary" class="section">
-                <h2 class="section-title">
-                    <i class="fa-solid fa-list"></i> 概要
-                </h2>
+            <section class="section" id="summary">
+                <h2 class="section-title">概要</h2>
                 <div class="section-content">
                     <p>生年月日：2007年7月2日</p>
                     <p>学校：奈良工業高等専門学校</p>
@@ -52,10 +39,8 @@
                 </div>
             </section>
 
-            <section id="skills" class="section">
-                <h2 class="section-title">
-                    <i class="fa-solid fa-code"></i> 技術
-                </h2>
+            <section class="section" id="skills">
+                <h2 class="section-title">技術</h2>
                 <div class="section-content">
                     <ul>
                         <li>HTML & CSS</li>
@@ -68,10 +53,8 @@
                 </div>
             </section>
 
-            <section id="works" class="section">
-                <h2 class="section-title">
-                    <i class="fa-brands fa-creative-commons-nd"></i> 実績
-                </h2>
+            <section class="section" id="works">
+                <h2 class="section-title">実績</h2>
                 <div class="section-content">
                     <ul>
                         <li>
@@ -113,10 +96,8 @@
                 </div>
             </section>
 
-            <section id="contacts" class="section">
-                <h2 class="section-title">
-                    <i class="fa-regular fa-address-book"></i> 連絡先
-                </h2>
+            <section class="section" id="contacts">
+                <h2 class="section-title">連絡先</h2>
                 <div class="section-content">
                     <p>
                         X（旧Twitter）：<a href="https://twitter.com/kmr3rnu"
@@ -139,25 +120,23 @@
 
         <script src="sakura.js"></script>
         <script src="loader.js"></script>
+        <script>
+            const sections = document.querySelectorAll(".section");
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.5,
+                },
+            );
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
+        </script>
     </body>
 </html>
-<script>
-    const sections = document.querySelectorAll(".section");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                }
-            });
-        },
-        {
-            threshold: 0.5,
-        },
-    );
-
-    sections.forEach((section) => {
-        observer.observe(section);
-    });
-</script>
