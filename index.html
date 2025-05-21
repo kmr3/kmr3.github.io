@@ -1,101 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a3ad3fe7a4.js" crossorigin="anonymous"></script>
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel=”icon” href=“/image/favicon.ico”>
-</head>
-<body>
-    <header>
-        <a class="header_name" href="/">KoichiMurama</a>
-        <nav class="site-top-nav">
-            <ul class="site-top-nav-list">
-              <li><a href="https://kmr3.github.io#about">About</a></li>
-              <li><a href="https://kmr3.github.io#works">Works</a></li>
-              <li><a href="https://kmr3.github.io#skills">Skills</a></li>
-              <li><a href="https://kmr3.github.io#contacts">Contacts</a></li>
-            </ul>
-          </nav>
-    </header>
-    <div style="text-align: center">
-        <img src="kmr.png"  alt="kmr">
-    </div>
-    <div class="container">
-        <section id="summary" class="section">
-	    <h1 class="title"><i class="fa-solid fa-list"></i>Summary</h1>
-            <h2 class="subtitle">About Me</h2>
-            <h2 class="moji">
-                <span style="border-bottom: solid 1px #00ff5d;">
-                生年月日:2007/07/02<br><br><br>
-                学校:奈良工業高等専門学校所属<br><br><br>
-                種別:ソフトウェアエンジニア<br><br><br>
-                he/him/his
-                </span>
-            </h2>
-        </section>
-        <p class="hr2"></p>
-    </div>
-    <div class="container2">
-        <section id="skills" class="skill">
-            <h1 class="title"><i class="fa-solid fa-code"></i>Skills</h1>
-            <h2 class="subtitle">What Can I Languages</h2>
-            <h2 class="moji">
-                <span style="border-bottom: solid 1px #00ff5d">
-                    HTML&CSS<br><br>
-                    JavaScript<br><br>
-                    Unity(C#)<br><br>
-                    Ruby on Rails<br><br>
-                    Scala<br><br>
-                    PHP<br><br>
-                </span>
-            </h2>
-            <p class="hr2"></p>
-        </section>
-    </div>
-    <div class="container3">
-        <section id="works" class="works">
-            <h1 class="title"><i class="fa-brands fa-creative-commons-nd"></i>Works</h1>
-            <h2 class="subtitle">What I do</h2>
-            <h2 class="moji">
-                <span style="border-bottom: solid 1px #00ff5d">
-                    Nasa Space Apps Challenge in Kushimoto 優勝
-                    <p class="more-btn"><a href="https://2019.spaceappschallenge.org/challenges/planets-near-and-far/build-planet-workshop/teams/constellator/project">more</a></p>
-                    Exa Kids 2019ファイナリスト
-                    <p class="more-btn"><a href="https://exa-kids.org/2019/">more</a></p>
-                    Exa Kids 2020ファイナリスト
-                    <p class="more-btn"><a href="https://exa-kids.org/contest2020/">more</a></p>
-                    「プログラミングで人生180度変わった。」<br>
-                    小学生がJavaScriptでゲーム開発するようになるまで
-                    <p class="more-btn"><a href="https://prog-8.com/success_stories/kmurama">more</a></p>
-                    子どもみらいグランプリ　プログラミング部門優秀賞
-                    <p class="more-btn"><a href="https://kids.valed.jp/about/grandprix/grandprix2019/">more</a></p>
-                    Codemao 2019 Competitive出場
-                    <p class="more-btn"><a href="https://twitter.com/CodeGameforKids/status/1209360500783505408">more</a></p>
-                    GPリーグScratch部門で全国大会出場
-                    <p class="more-btn"><a href="https://gpleague.jp/1584/">more</a></p>
-                </span>
-            </h2>
-            <p class="hr2"></p>
-        </section>
-    </div>
-    <div class="container4">
-        <section id="contacts" class="contacts">
-            <h1 class="title"><i class="fa-regular fa-address-book"></i>Contacts</h1>
-            <h2 class="subtitle">My SNS</h2>
-            <h2 class="moji">
-                <span style="border-bottom: solid 1px #00ff5d">
-                    X(旧Twitter)
-                    <p class="more-btn"><a href="https://twitter.com/kmr3rnu">Xへ</a></p><br><br>
-                    Mail
-                    <p class="more-btn"><a href="mailto:kmrtyan@gmail.com">メールアプリを起動</a></p><br><br>
-                    Discord:kmr3<br><br>
-                </span>
-            </h2>
-            <p class="hr2"></p>
-        </section>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>村馬 弘一 | 和風ポートフォリオ</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="preload"
+            href="fonts/tamanegi.ttf"
+            as="font"
+            type="font/ttf"
+            crossorigin
+        />
+        <script
+            src="https://kit.fontawesome.com/a3ad3fe7a4.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div id="fusuma-left" class="fusuma"></div>
+        <div id="fusuma-right" class="fusuma"></div>
+        <canvas id="sakura-canvas"></canvas>
+
+        <!-- ローディング画面は別ファイルで処理 -->
+        <div id="loading-screen">
+            <div class="loading-text" id="loadingText">Loading</div>
+        </div>
+
+        <main id="main-content" class="hidden">
+            <header class="site-header">
+                <h1 class="site-title">村馬 弘一</h1>
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="#summary">概要</a></li>
+                        <li><a href="#skills">技術</a></li>
+                        <li><a href="#works">実績</a></li>
+                        <li><a href="#contacts">連絡先</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section id="summary" class="section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-list"></i> 概要
+                </h2>
+                <div class="section-content">
+                    <p>生年月日：2007年7月2日</p>
+                    <p>学校：奈良工業高等専門学校</p>
+                    <p>種別：ソフトウェアエンジニア</p>
+                    <p>代名詞：he/him/his</p>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-code"></i> 技術
+                </h2>
+                <div class="section-content">
+                    <ul>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                        <li>Unity (C#)</li>
+                        <li>Ruby on Rails</li>
+                        <li>Scala</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="works" class="section">
+                <h2 class="section-title">
+                    <i class="fa-brands fa-creative-commons-nd"></i> 実績
+                </h2>
+                <div class="section-content">
+                    <ul>
+                        <li>
+                            Nasa Space Apps Challenge in Kushimoto 優勝 -
+                            <a
+                                href="https://2019.spaceappschallenge.org/challenges/planets-near-and-far/build-planet-workshop/teams/constellator/project"
+                                >more</a
+                            >
+                        </li>
+                        <li>
+                            Exa Kids 2019/2020 ファイナリスト -
+                            <a href="https://exa-kids.org/">more</a>
+                        </li>
+                        <li>
+                            小学生がJavaScriptでゲーム開発 -
+                            <a href="https://prog-8.com/success_stories/kmurama"
+                                >more</a
+                            >
+                        </li>
+                        <li>
+                            子どもみらいGP プログラミング部門優秀賞 -
+                            <a
+                                href="https://kids.valed.jp/about/grandprix/grandprix2019/"
+                                >more</a
+                            >
+                        </li>
+                        <li>
+                            Codemao 2019 Competitive 出場 -
+                            <a
+                                href="https://twitter.com/CodeGameforKids/status/1209360500783505408"
+                                >more</a
+                            >
+                        </li>
+                        <li>
+                            GPリーグScratch部門 全国大会出場 -
+                            <a href="https://gpleague.jp/1584/">more</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="contacts" class="section">
+                <h2 class="section-title">
+                    <i class="fa-regular fa-address-book"></i> 連絡先
+                </h2>
+                <div class="section-content">
+                    <p>
+                        X（旧Twitter）：<a href="https://twitter.com/kmr3rnu"
+                            >@kmr3rnu</a
+                        >
+                    </p>
+                    <p>
+                        Mail：<a href="mailto:kmrtyan@gmail.com"
+                            >kmrtyan@gmail.com</a
+                        >
+                    </p>
+                    <p>Discord：kmr3</p>
+                </div>
+            </section>
+
+            <footer class="site-footer">
+                <p>&copy; 2025 村馬 弘一</p>
+            </footer>
+        </main>
+
+        <script src="sakura.js"></script>
+        <script src="loader.js"></script>
+    </body>
 </html>
+<script>
+    const sections = document.querySelectorAll(".section");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        },
+        {
+            threshold: 0.5,
+        },
+    );
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+</script>
