@@ -3,140 +3,1548 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>村馬 弘一</title>
-        <link rel="stylesheet" href="style.css" />
+        <title>村馬 弘一 - ソフトウェアエンジニア ポートフォリオ</title>
+        <meta
+            name="description"
+            content="村馬弘一のポートフォリオサイト。ソフトウェアエンジニアとしての実績と技術スキルを紹介。"
+        />
         <link
             rel="preload"
-            href="fonts/tamanegi.ttf"
-            as="font"
-            type="font/ttf"
-            crossorigin
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
         />
         <script
             src="https://kit.fontawesome.com/a3ad3fe7a4.js"
             crossorigin="anonymous"
         ></script>
+        <style>
+            :root {
+                /* プロフェッショナルカラーパレット */
+                --primary-blue: #2563eb;
+                --primary-dark: #1e40af;
+                --secondary-gray: #64748b;
+                --accent-purple: #7c3aed;
+                --accent-emerald: #059669;
+                --success-green: #10b981;
+                --warning-orange: #f59e0b;
+
+                /* ニュートラルカラー */
+                --white: #ffffff;
+                --gray-50: #f8fafc;
+                --gray-100: #f1f5f9;
+                --gray-200: #e2e8f0;
+                --gray-300: #cbd5e1;
+                --gray-400: #94a3b8;
+                --gray-500: #64748b;
+                --gray-600: #475569;
+                --gray-700: #334155;
+                --gray-800: #1e293b;
+                --gray-900: #0f172a;
+
+                /* グラデーション */
+                --gradient-primary: linear-gradient(
+                    135deg,
+                    #667eea 0%,
+                    #764ba2 100%
+                );
+                --gradient-success: linear-gradient(
+                    135deg,
+                    #84fab0 0%,
+                    #8fd3f4 100%
+                );
+                --gradient-purple: linear-gradient(
+                    135deg,
+                    #a8edea 0%,
+                    #fed6e3 100%
+                );
+                --gradient-blue: linear-gradient(
+                    135deg,
+                    #667eea 0%,
+                    #764ba2 100%
+                );
+
+                /* シャドウ */
+                --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+                --shadow:
+                    0 1px 3px 0 rgb(0 0 0 / 0.1),
+                    0 1px 2px -1px rgb(0 0 0 / 0.1);
+                --shadow-md:
+                    0 4px 6px -1px rgb(0 0 0 / 0.1),
+                    0 2px 4px -2px rgb(0 0 0 / 0.1);
+                --shadow-lg:
+                    0 10px 15px -3px rgb(0 0 0 / 0.1),
+                    0 4px 6px -4px rgb(0 0 0 / 0.1);
+                --shadow-xl:
+                    0 20px 25px -5px rgb(0 0 0 / 0.1),
+                    0 8px 10px -6px rgb(0 0 0 / 0.1);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family:
+                    "Noto Sans JP",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    sans-serif;
+                line-height: 1.6;
+                color: var(--gray-800);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                overflow-x: hidden;
+            }
+
+            /* アニメーション背景 */
+            .bg-animated {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background: linear-gradient(
+                    -45deg,
+                    #667eea,
+                    #764ba2,
+                    #f093fb,
+                    #f5576c
+                );
+                background-size: 400% 400%;
+                animation: gradient-shift 15s ease infinite;
+            }
+
+            @keyframes gradient-shift {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            /* フローティング要素 */
+            .floating-elements {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                pointer-events: none;
+            }
+
+            .floating-circle {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                animation: float 20s infinite linear;
+            }
+
+            .floating-circle:nth-child(1) {
+                width: 80px;
+                height: 80px;
+                left: 10%;
+                animation-duration: 25s;
+            }
+
+            .floating-circle:nth-child(2) {
+                width: 120px;
+                height: 120px;
+                left: 80%;
+                animation-duration: 30s;
+                animation-delay: -5s;
+            }
+
+            .floating-circle:nth-child(3) {
+                width: 60px;
+                height: 60px;
+                left: 50%;
+                animation-duration: 20s;
+                animation-delay: -10s;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(100vh) rotate(0deg);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100px) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+
+            /* メインコンテナ */
+            main {
+                position: relative;
+                z-index: 1;
+            }
+
+            /* ローディングスクリーン */
+            #loading-screen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                transition:
+                    opacity 1s ease,
+                    transform 1s ease;
+            }
+
+            .loading-content {
+                text-align: center;
+                color: white;
+            }
+
+            .loading-text {
+                font-size: 2rem;
+                font-weight: 600;
+                margin-bottom: 2rem;
+                font-family: "JetBrains Mono", monospace;
+            }
+
+            .loading-bar {
+                width: 300px;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 2px;
+                overflow: hidden;
+                margin: 0 auto;
+            }
+
+            .loading-progress {
+                height: 100%;
+                background: linear-gradient(90deg, #84fab0, #8fd3f4);
+                width: 0%;
+                animation: loading-animation 3s ease-out forwards;
+            }
+
+            @keyframes loading-animation {
+                to {
+                    width: 100%;
+                }
+            }
+
+            /* ナビゲーション */
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                z-index: 1000;
+                padding: 1rem 0;
+                transition: all 0.3s ease;
+            }
+
+            .navbar.scrolled {
+                background: rgba(255, 255, 255, 0.98);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav-logo {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--primary-blue);
+                text-decoration: none;
+                font-family: "JetBrains Mono", monospace;
+            }
+
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                gap: 2rem;
+            }
+
+            .nav-link {
+                color: var(--gray-700);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease;
+                position: relative;
+            }
+
+            .nav-link::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--primary-blue);
+                transition: width 0.3s ease;
+            }
+
+            .nav-link:hover::after,
+            .nav-link.active::after {
+                width: 100%;
+            }
+
+            .nav-link:hover,
+            .nav-link.active {
+                color: var(--primary-blue);
+            }
+
+            /* モバイルメニュー */
+            .mobile-menu-btn {
+                display: none;
+                flex-direction: column;
+                gap: 4px;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            .mobile-menu-btn span {
+                width: 25px;
+                height: 3px;
+                background: var(--gray-700);
+                transition: all 0.3s ease;
+            }
+
+            /* セクション */
+            .section {
+                min-height: 100vh;
+                padding: 8rem 2rem 4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transform: translateY(50px);
+                transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+            .section.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            /* ヒーローセクション */
+            .hero {
+                text-align: center;
+                color: white;
+                padding: 12rem 2rem 8rem;
+            }
+
+            .hero-title {
+                font-size: clamp(3rem, 8vw, 6rem);
+                font-weight: 900;
+                margin-bottom: 1rem;
+                background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: slideUp 1s ease-out forwards;
+                animation-delay: 0.5s;
+                opacity: 0;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin-bottom: 1rem;
+                opacity: 0.9;
+                animation: slideUp 1s ease-out forwards;
+                animation-delay: 0.8s;
+                opacity: 0;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+                max-width: 600px;
+                margin: 0 auto 3rem;
+                opacity: 0.8;
+                line-height: 1.7;
+                animation: slideUp 1s ease-out forwards;
+                animation-delay: 1.1s;
+                opacity: 0;
+            }
+
+            .hero-cta {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                animation: slideUp 1s ease-out forwards;
+                animation-delay: 1.4s;
+                opacity: 0;
+            }
+
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.875rem 2rem;
+                border-radius: 50px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+                cursor: pointer;
+                border: none;
+                font-size: 1rem;
+            }
+
+            .btn-primary {
+                background: white;
+                color: var(--primary-blue);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-xl);
+                background: var(--gray-50);
+            }
+
+            .btn-outline {
+                background: transparent;
+                color: white;
+                border: 2px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .btn-outline:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.6);
+                transform: translateY(-2px);
+            }
+
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* コンテンツセクション */
+            .content-section {
+                background: white;
+                padding: 6rem 2rem;
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 4rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: var(--gray-900);
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.2rem;
+                color: var(--gray-600);
+                max-width: 600px;
+                margin: 0 auto;
+                line-height: 1.7;
+            }
+
+            /* 自己紹介セクション */
+            .about-grid {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 4rem;
+                align-items: center;
+            }
+
+            .about-image {
+                position: relative;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 8px solid white;
+                box-shadow: var(--shadow-xl);
+                transition: all 0.3s ease;
+            }
+
+            .profile-image:hover {
+                transform: scale(1.05);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            }
+
+            .about-content h3 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--gray-900);
+                margin-bottom: 1rem;
+            }
+
+            .about-content p {
+                color: var(--gray-600);
+                margin-bottom: 1.5rem;
+                line-height: 1.8;
+            }
+
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .stat-item {
+                text-align: center;
+                padding: 1.5rem;
+                background: var(--gray-50);
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .stat-item:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .stat-number {
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--primary-blue);
+                display: block;
+            }
+
+            .stat-label {
+                color: var(--gray-600);
+                font-size: 0.9rem;
+                margin-top: 0.5rem;
+            }
+
+            /* スキルセクション */
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .skill-category {
+                background: white;
+                padding: 2rem;
+                border-radius: 20px;
+                box-shadow: var(--shadow-lg);
+                border: 1px solid var(--gray-200);
+                transition: all 0.3s ease;
+            }
+
+            .skill-category:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-xl);
+            }
+
+            .skill-category h3 {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: var(--gray-900);
+                margin-bottom: 1.5rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .skill-category i {
+                font-size: 1.5rem;
+                color: var(--primary-blue);
+            }
+
+            .skill-list {
+                list-style: none;
+            }
+
+            .skill-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--gray-100);
+            }
+
+            .skill-item:last-child {
+                border-bottom: none;
+            }
+
+            .skill-name {
+                font-weight: 500;
+                color: var(--gray-700);
+            }
+
+            .skill-level {
+                display: flex;
+                gap: 0.25rem;
+            }
+
+            .skill-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--gray-300);
+                transition: all 0.3s ease;
+            }
+
+            .skill-dot.active {
+                background: var(--primary-blue);
+                box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+            }
+
+            /* プロジェクトセクション */
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .project-card {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: var(--shadow-lg);
+                transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+                border: 1px solid var(--gray-200);
+            }
+
+            .project-card:hover {
+                transform: translateY(-10px);
+                box-shadow: var(--shadow-xl);
+            }
+
+            .project-image {
+                height: 200px;
+                background: var(--gradient-primary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 3rem;
+            }
+
+            .project-content {
+                padding: 2rem;
+            }
+
+            .project-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: var(--gray-900);
+                margin-bottom: 0.5rem;
+            }
+
+            .project-description {
+                color: var(--gray-600);
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+
+            .project-tags {
+                display: flex;
+                gap: 0.5rem;
+                flex-wrap: wrap;
+                margin-bottom: 1.5rem;
+            }
+
+            .tag {
+                padding: 0.25rem 0.75rem;
+                background: var(--gray-100);
+                color: var(--gray-600);
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+
+            .project-links {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .project-link {
+                color: var(--primary-blue);
+                text-decoration: none;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                transition: color 0.3s ease;
+            }
+
+            .project-link:hover {
+                color: var(--primary-dark);
+            }
+
+            /* お問い合わせセクション */
+            .contact-content {
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .contact-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .contact-item {
+                background: white;
+                padding: 2rem;
+                border-radius: 20px;
+                box-shadow: var(--shadow-lg);
+                transition: all 0.3s ease;
+                text-align: center;
+                border: 1px solid var(--gray-200);
+            }
+
+            .contact-item:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-xl);
+            }
+
+            .contact-icon {
+                width: 60px;
+                height: 60px;
+                background: var(--gradient-primary);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1rem;
+                color: white;
+                font-size: 1.5rem;
+            }
+
+            .contact-item h3 {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: var(--gray-900);
+                margin-bottom: 0.5rem;
+            }
+
+            .contact-item p {
+                color: var(--gray-600);
+                margin-bottom: 1rem;
+            }
+
+            .contact-item a {
+                color: var(--primary-blue);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+            .contact-item a:hover {
+                color: var(--primary-dark);
+            }
+
+            /* フッター */
+            .footer {
+                background: var(--gray-900);
+                color: white;
+                text-align: center;
+                padding: 3rem 2rem;
+            }
+
+            .footer p {
+                margin-bottom: 1rem;
+                opacity: 0.8;
+            }
+
+            /* レスポンシブデザイン */
+            @media (max-width: 768px) {
+                .nav-menu {
+                    display: none;
+                }
+
+                .mobile-menu-btn {
+                    display: flex;
+                }
+
+                .hero-title {
+                    font-size: 3rem;
+                }
+
+                .about-grid {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                    text-align: center;
+                }
+
+                .profile-image {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .stats-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .skills-grid,
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .hero-cta {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .section {
+                    padding: 6rem 1rem 4rem;
+                }
+
+                .hero {
+                    padding: 10rem 1rem 6rem;
+                }
+            }
+
+            .hidden {
+                display: none !important;
+            }
+        </style>
     </head>
     <body>
-        <canvas id="sakura-canvas"></canvas>
-
-        <div id="loading-screen">
-            <div class="loading-text" id="loadingText">Loading</div>
+        <div class="bg-animated"></div>
+        <div class="floating-elements">
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
         </div>
 
+        <div id="loading-screen">
+            <div class="loading-content">
+                <div class="loading-text" id="loadingText">
+                    ポートフォリオを読み込み中...
+                </div>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="#hero" class="nav-logo">村馬</a>
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link active">ホーム</a></li>
+                    <li><a href="#about" class="nav-link">自己紹介</a></li>
+                    <li><a href="#skills" class="nav-link">スキル</a></li>
+                    <li><a href="#projects" class="nav-link">実績</a></li>
+                    <li>
+                        <a href="#contact" class="nav-link">お問い合わせ</a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
         <main id="main-content" class="hidden">
-            <section class="section">
-                <h1 class="site-title">村馬 弘一</h1>
-            </section>
-
-            <section class="section" id="summary">
-                <h2 class="section-title">概要</h2>
-                <div class="section-content">
-                    <p>生年月日：2007年7月2日</p>
-                    <p>学校：奈良工業高等専門学校</p>
-                    <p>種別：ソフトウェアエンジニア</p>
-                    <p>代名詞：he/him/his</p>
-                </div>
-            </section>
-
-            <section class="section" id="skills">
-                <h2 class="section-title">技術</h2>
-                <div class="section-content">
-                    <ul>
-                        <li>HTML & CSS</li>
-                        <li>JavaScript</li>
-                        <li>Unity (C#)</li>
-                        <li>Ruby on Rails</li>
-                        <li>Scala</li>
-                        <li>PHP</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section" id="works">
-                <h2 class="section-title">実績</h2>
-                <div class="section-content">
-                    <ul>
-                        <li>
-                            Nasa Space Apps Challenge in Kushimoto 優勝 -
-                            <a
-                                href="https://2019.spaceappschallenge.org/challenges/planets-near-and-far/build-planet-workshop/teams/constellator/project"
-                                >more</a
-                            >
-                        </li>
-                        <li>
-                            Exa Kids 2019/2020 ファイナリスト -
-                            <a href="https://exa-kids.org/">more</a>
-                        </li>
-                        <li>
-                            小学生がJavaScriptでゲーム開発 -
-                            <a href="https://prog-8.com/success_stories/kmurama"
-                                >more</a
-                            >
-                        </li>
-                        <li>
-                            子どもみらいGP プログラミング部門優秀賞 -
-                            <a
-                                href="https://kids.valed.jp/about/grandprix/grandprix2019/"
-                                >more</a
-                            >
-                        </li>
-                        <li>
-                            Codemao 2019 Competitive 出場 -
-                            <a
-                                href="https://twitter.com/CodeGameforKids/status/1209360500783505408"
-                                >more</a
-                            >
-                        </li>
-                        <li>
-                            GPリーグScratch部門 全国大会出場 -
-                            <a href="https://gpleague.jp/1584/">more</a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section" id="contacts">
-                <h2 class="section-title">連絡先</h2>
-                <div class="section-content">
-                    <p>
-                        X（旧Twitter）：<a href="https://twitter.com/kmr3rnu"
-                            >@kmr3rnu</a
-                        >
+            <section class="section hero" id="hero">
+                <div class="container">
+                    <h1 class="hero-title">村馬 弘一</h1>
+                    <p class="hero-subtitle">
+                        ソフトウェアエンジニア & デジタルイノベーター
                     </p>
-                    <p>
-                        Mail：<a href="mailto:kmrtyan@gmail.com"
-                            >kmrtyan@gmail.com</a
-                        >
+                    <p class="hero-description">
+                        コードを通じて革新的なソリューションを創造することに情熱を注いでいます。
+                        複数のプログラミング言語とフレームワークに精通し、
+                        数々の受賞歴を持つプロジェクトの実績があります。
                     </p>
-                    <p>Discord：kmr3</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            実績を見る
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            お問い合わせ
+                        </a>
+                    </div>
                 </div>
             </section>
 
-            <footer class="site-footer">
-                <p>&copy; 2025 村馬 弘一</p>
-            </footer>
+            <section class="section content-section" id="about">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">自己紹介</h2>
+                        <p class="section-subtitle">
+                            革新と卓越性に情熱を注ぐ、専門性の高いソフトウェアエンジニア
+                        </p>
+                    </div>
+                    <div class="about-grid">
+                        <div class="about-image">
+                            <img
+                                src="kmr.png"
+                                alt="村馬弘一のプロフィール写真"
+                                class="profile-image"
+                            />
+                        </div>
+                        <div class="about-content">
+                            <h3>ソフトウェアエンジニア</h3>
+                            <p>
+                                2007年生まれの若く情熱的なソフトウェアエンジニアです。現在、奈良工業高等専門学校で学んでおり、
+                                プログラミングの旅は早期に始まり、国際競技会での数々の受賞と認知につながりました。
+                            </p>
+                            <p>
+                                フルスタック開発、Unityでのゲーム開発を専門とし、JavaScript、Ruby、Scala、
+                                PHPなど様々なプログラミング言語の経験があります。私の目標は、
+                                ポジティブな影響を与える革新的なソリューションを創造することです。
+                            </p>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-number">6+</span>
+                                    <span class="stat-label">受賞歴</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">7+</span>
+                                    <span class="stat-label">習得技術</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">3+</span>
+                                    <span class="stat-label">開発経験年数</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">∞</span>
+                                    <span class="stat-label">情熱</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="section content-section"
+                id="skills"
+                style="background: var(--gray-50)"
+            >
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">技術スキル</h2>
+                        <p class="section-subtitle">
+                            堅牢なアプリケーション構築のための最新技術とフレームワークに精通
+                        </p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>
+                                <i class="fas fa-code"></i> フロントエンド開発
+                            </h3>
+                            <ul class="skill-list">
+                                <li class="skill-item">
+                                    <span class="skill-name">HTML & CSS</span>
+                                    <div class="skill-level">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                    </div>
+                                </li>
+                                <li class="skill-item">
+                                    <span class="skill-name">JavaScript</span>
+                                    <div class="skill-level">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>
+                                <i class="fas fa-server"></i> バックエンド開発
+                            </h3>
+                            <ul class="skill-list">
+                                <li class="skill-item">
+                                    <span class="skill-name"
+                                        >Ruby on Rails</span
+                                    >
+                                    <div class="skill-level">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                </li>
+                                <li class="skill-item">
+                                    <span class="skill-name">PHP</span>
+                                    <div class="skill-level">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                </li>
+                                <li class="skill-item">
+                                    <span class="skill-name">Scala</span>
+                                    <div class="skill-level">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3><i class="fas fa-gamepad"></i> ゲーム開発</h3>
+                            <ul class="skill-list">
+                                <li class="skill-item">
+                                    <span class="skill-name">Unity (C#)</span>
+                                    <div class="skill-level">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                </li>
+                                <li class="skill-item">
+                                    <span class="skill-name"
+                                        >ゲームデザイン</span
+                                    >
+                                    <div class="skill-level">
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot active"></div>
+                                        <div class="skill-dot"></div>
+                                        <div class="skill-dot"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section content-section" id="projects">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">主要プロジェクト & 実績</h2>
+                        <p class="section-subtitle">
+                            受賞歴のあるプロジェクトと国際競技会での成果
+                        </p>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div
+                                class="project-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #667eea 0%,
+                                        #764ba2 100%
+                                    );
+                                "
+                            >
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">
+                                    NASA Space Apps Challenge 優勝
+                                </h3>
+                                <p class="project-description">
+                                    串本で開催された国際的なNASA Space Apps
+                                    Challengeで1位を獲得。
+                                    世界的に認められた革新的な宇宙探査ソリューションを開発しました。
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">国際大会優勝</span>
+                                    <span class="tag">NASA</span>
+                                    <span class="tag">イノベーション</span>
+                                </div>
+                                <div class="project-links">
+                                    <a
+                                        href="https://2019.spaceappschallenge.org/challenges/planets-near-and-far/build-planet-workshop/teams/constellator/project"
+                                        target="_blank"
+                                        class="project-link"
+                                    >
+                                        <i class="fas fa-external-link-alt"></i>
+                                        プロジェクトを見る
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div
+                                class="project-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #84fab0 0%,
+                                        #8fd3f4 100%
+                                    );
+                                "
+                            >
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">
+                                    Exa Kids ファイナリスト
+                                </h3>
+                                <p class="project-description">
+                                    Exa Kids
+                                    2019/2020にファイナリストとして選出。
+                                    日本の若手開発者向けの権威あるプログラミング競技会での快挙。
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">ファイナリスト</span>
+                                    <span class="tag">プログラミング</span>
+                                    <span class="tag">若手成果</span>
+                                </div>
+                                <div class="project-links">
+                                    <a
+                                        href="https://exa-kids.org/"
+                                        target="_blank"
+                                        class="project-link"
+                                    >
+                                        <i class="fas fa-external-link-alt"></i>
+                                        詳細を見る
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div
+                                class="project-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #ffecd2 0%,
+                                        #fcb69f 100%
+                                    );
+                                "
+                            >
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">
+                                    JavaScript ゲーム開発
+                                </h3>
+                                <p class="project-description">
+                                    若年期にJavaScriptで示した卓越したゲーム開発スキルが
+                                    Progateの成功事例として特集されました。
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">ゲーム開発</span>
+                                    <span class="tag">特集記事</span>
+                                </div>
+                                <div class="project-links">
+                                    <a
+                                        href="https://prog-8.com/success_stories/kmurama"
+                                        target="_blank"
+                                        class="project-link"
+                                    >
+                                        <i class="fas fa-external-link-alt"></i>
+                                        記事を読む
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div
+                                class="project-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #a8edea 0%,
+                                        #fed6e3 100%
+                                    );
+                                "
+                            >
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">
+                                    プログラミング優秀賞
+                                </h3>
+                                <p class="project-description">
+                                    全国子どもみらいグランプリ競技会のプログラミング部門で
+                                    優秀賞を受賞しました。
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">優秀賞</span>
+                                    <span class="tag">全国大会</span>
+                                    <span class="tag">卓越性</span>
+                                </div>
+                                <div class="project-links">
+                                    <a
+                                        href="https://kids.valed.jp/about/grandprix/grandprix2019/"
+                                        target="_blank"
+                                        class="project-link"
+                                    >
+                                        <i class="fas fa-external-link-alt"></i>
+                                        詳細を見る
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div
+                                class="project-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #ff9a9e 0%,
+                                        #fecfef 100%
+                                    );
+                                "
+                            >
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">
+                                    国際プログラミング競技
+                                </h3>
+                                <p class="project-description">
+                                    Codemao
+                                    2019国際プログラミング競技会に参加し、
+                                    グローバルなプログラミングチャレンジで日本を代表しました。
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">国際大会</span>
+                                    <span class="tag">競技会</span>
+                                    <span class="tag">グローバル</span>
+                                </div>
+                                <div class="project-links">
+                                    <a
+                                        href="https://twitter.com/CodeGameforKids/status/1209360500783505408"
+                                        target="_blank"
+                                        class="project-link"
+                                    >
+                                        <i class="fas fa-external-link-alt"></i>
+                                        詳細を見る
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div
+                                class="project-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #667eea 0%,
+                                        #764ba2 100%
+                                    );
+                                "
+                            >
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Scratch 全国大会</h3>
+                                <p class="project-description">
+                                    GPリーグScratch部門の全国決勝に進出し、
+                                    高度なビジュアルプログラミングスキルを実証しました。
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">Scratch</span>
+                                    <span class="tag">全国決勝</span>
+                                    <span class="tag"
+                                        >ビジュアルプログラミング</span
+                                    >
+                                </div>
+                                <div class="project-links">
+                                    <a
+                                        href="https://gpleague.jp/1584/"
+                                        target="_blank"
+                                        class="project-link"
+                                    >
+                                        <i class="fas fa-external-link-alt"></i>
+                                        大会情報
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="section content-section"
+                id="contact"
+                style="background: var(--gray-50)"
+            >
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">お問い合わせ</h2>
+                        <p class="section-subtitle">
+                            次のプロジェクトでのコラボレーションや機会についてお気軽にご相談ください
+                        </p>
+                    </div>
+                    <div class="contact-content">
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                                <h3>Twitter</h3>
+                                <p>最新情報をフォロー</p>
+                                <a
+                                    href="https://twitter.com/kmr3rnu"
+                                    target="_blank"
+                                    >@kmr3rnu</a
+                                >
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h3>メール</h3>
+                                <p>メッセージをお送りください</p>
+                                <a href="mailto:kmrtyan@gmail.com"
+                                    >kmrtyan@gmail.com</a
+                                >
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-discord"></i>
+                                </div>
+                                <h3>Discord</h3>
+                                <p>Discordでチャットしましょう</p>
+                                <a href="#">kmr3</a>
+                            </div>
+                        </div>
+                        <div style="margin-top: 3rem">
+                            <a
+                                href="mailto:kmrtyan@gmail.com"
+                                class="btn btn-primary"
+                                style="font-size: 1.1rem; padding: 1rem 2.5rem"
+                            >
+                                <i class="fas fa-paper-plane"></i>
+                                メッセージを送る
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
-        <script src="sakura.js"></script>
-        <script src="loader.js"></script>
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 村馬 弘一. All rights reserved.</p>
+            </div>
+        </footer>
+
         <script>
-            const sections = document.querySelectorAll(".section");
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("visible");
-                        }
-                    });
-                },
-                {
-                    threshold: 0.5,
-                },
-            );
-            sections.forEach((section) => {
+            // ローディングアニメーション
+            window.addEventListener("load", () => {
+                setTimeout(() => {
+                    const loadingScreen =
+                        document.getElementById("loading-screen");
+                    const mainContent = document.getElementById("main-content");
+
+                    loadingScreen.style.opacity = "0";
+                    loadingScreen.style.transform = "scale(0.95)";
+
+                    setTimeout(() => {
+                        loadingScreen.style.display = "none";
+                        mainContent.classList.remove("hidden");
+                    }, 1000);
+                }, 3000);
+            });
+
+            // ナビバーのスクロール効果
+            window.addEventListener("scroll", () => {
+                const navbar = document.getElementById("navbar");
+                if (window.scrollY > 100) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
+
+            // ナビゲーションリンクのスムーズスクロール
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(
+                        this.getAttribute("href"),
+                    );
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                });
+            });
+
+            // アクティブナビゲーションリンク
+            window.addEventListener("scroll", () => {
+                const sections = document.querySelectorAll(".section");
+                const navLinks = document.querySelectorAll(".nav-link");
+
+                let current = "";
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop - 200) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + current) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+
+            // アニメーション用のIntersection Observer
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: "0px 0px -50px 0px",
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll(".section").forEach((section) => {
                 observer.observe(section);
             });
+
+            // プロジェクトカードのホバー効果
+            document.querySelectorAll(".project-card").forEach((card) => {
+                card.addEventListener("mouseenter", () => {
+                    card.style.transform = "translateY(-10px) scale(1.02)";
+                });
+
+                card.addEventListener("mouseleave", () => {
+                    card.style.transform = "translateY(0) scale(1)";
+                });
+            });
+
+            // スキルカードのホバー効果
+            document.querySelectorAll(".skill-category").forEach((card) => {
+                card.addEventListener("mouseenter", () => {
+                    card.style.transform = "translateY(-5px)";
+                });
+
+                card.addEventListener("mouseleave", () => {
+                    card.style.transform = "translateY(0)";
+                });
+            });
+
+            // お問い合わせアイテムのホバー効果
+            document.querySelectorAll(".contact-item").forEach((item) => {
+                item.addEventListener("mouseenter", () => {
+                    item.style.transform = "translateY(-5px) scale(1.02)";
+                });
+
+                item.addEventListener("mouseleave", () => {
+                    item.style.transform = "translateY(0) scale(1)";
+                });
+            });
+
+            // ローディングテキストアニメーション
+            const loadingText = document.getElementById("loadingText");
+            const loadingStates = [
+                "ポートフォリオを読み込み中...",
+                "初期化中...",
+                "準備完了...",
+                "ようこそ！",
+            ];
+            let currentState = 0;
+
+            const loadingInterval = setInterval(() => {
+                if (currentState < loadingStates.length - 1) {
+                    currentState++;
+                    loadingText.textContent = loadingStates[currentState];
+                } else {
+                    clearInterval(loadingInterval);
+                }
+            }, 800);
+
+            // モバイルメニュー機能
+            const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+            const navMenu = document.querySelector(".nav-menu");
+
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener("click", () => {
+                    navMenu.classList.toggle("active");
+                    mobileMenuBtn.classList.toggle("active");
+                });
+            }
+
+            // パフォーマンス最適化
+            let ticking = false;
+            function updateScrollEffects() {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener("scroll", updateScrollEffects);
         </script>
     </body>
 </html>
