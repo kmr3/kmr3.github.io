@@ -96,6 +96,8 @@
                 color: var(--gray-800);
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 overflow-x: hidden;
+                min-height: 100vh;
+                min-height: 100dvh; /* 動的ビューポート高さ */
             }
 
             /* アニメーション背景 */
@@ -336,6 +338,7 @@
             /* セクション */
             .section {
                 min-height: 100vh;
+                min-height: 100dvh; /* 動的ビューポート高さ */
                 padding: 8rem 2rem 4rem;
                 display: flex;
                 align-items: center;
@@ -361,6 +364,11 @@
                 text-align: center;
                 color: white;
                 padding: 12rem 2rem 8rem;
+                min-height: 100vh;
+                min-height: 100dvh; /* 動的ビューポート高さ */
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .hero-title {
@@ -647,6 +655,8 @@
                 box-shadow: var(--shadow-lg);
                 transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
                 border: 1px solid var(--gray-200);
+                position: relative;
+                z-index: 1;
             }
 
             .project-card:hover {
@@ -662,10 +672,15 @@
                 justify-content: center;
                 color: white;
                 font-size: 3rem;
+                position: relative;
+                z-index: 1;
             }
 
             .project-content {
                 padding: 2rem;
+                background: white;
+                position: relative;
+                z-index: 2;
             }
 
             .project-title {
@@ -673,12 +688,16 @@
                 font-weight: 600;
                 color: var(--gray-900);
                 margin-bottom: 0.5rem;
+                position: relative;
+                z-index: 3;
             }
 
             .project-description {
                 color: var(--gray-600);
                 line-height: 1.6;
                 margin-bottom: 1.5rem;
+                position: relative;
+                z-index: 3;
             }
 
             .project-tags {
@@ -686,6 +705,8 @@
                 gap: 0.5rem;
                 flex-wrap: wrap;
                 margin-bottom: 1.5rem;
+                position: relative;
+                z-index: 3;
             }
 
             .tag {
@@ -695,11 +716,15 @@
                 border-radius: 20px;
                 font-size: 0.8rem;
                 font-weight: 500;
+                position: relative;
+                z-index: 3;
             }
 
             .project-links {
                 display: flex;
                 gap: 1rem;
+                position: relative;
+                z-index: 3;
             }
 
             .project-link {
@@ -710,6 +735,8 @@
                 align-items: center;
                 gap: 0.5rem;
                 transition: color 0.3s ease;
+                position: relative;
+                z-index: 3;
             }
 
             .project-link:hover {
@@ -833,51 +860,106 @@
                     align-items: center;
                 }
 
+                /* モバイル専用の調整 */
                 .section {
+                    min-height: 100vh;
+                    min-height: 100dvh;
                     padding: 6rem 1rem 4rem;
                 }
 
                 .hero {
-                    padding: 10rem 1rem 6rem;
+                    min-height: 100vh;
+                    min-height: 100dvh;
+                    padding: 8rem 1rem 4rem;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .hero .container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: calc(100vh - 12rem);
+                    min-height: calc(100dvh - 12rem);
+                }
+
+                /* コンテンツセクションの調整 */
+                .content-section {
+                    padding: 4rem 1rem;
+                    min-height: auto;
                 }
 
                 /* プロジェクトカードのモバイル対応 */
+                .projects-grid {
+                    grid-template-columns: 1fr !important;
+                    gap: 1.5rem;
+                    margin-top: 2rem;
+                }
+
                 .project-card {
                     margin-bottom: 1rem;
                     max-width: 100%;
                     width: 100%;
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    position: relative;
+                    background: white !important;
                 }
 
                 .project-content {
                     padding: 1.5rem;
+                    display: block !important;
+                    background: white;
                 }
 
                 .project-title {
                     font-size: 1.2rem;
                     line-height: 1.4;
+                    color: var(--gray-900) !important;
+                    display: block !important;
                 }
 
                 .project-description {
                     font-size: 0.95rem;
                     line-height: 1.5;
+                    color: var(--gray-600) !important;
+                    display: block !important;
                 }
 
                 .project-tags {
                     gap: 0.3rem;
                     margin-bottom: 1rem;
+                    display: flex !important;
+                    flex-wrap: wrap;
                 }
 
                 .tag {
                     font-size: 0.75rem;
                     padding: 0.2rem 0.6rem;
+                    background: var(--gray-100) !important;
+                    color: var(--gray-600) !important;
+                    display: inline-block !important;
                 }
 
                 .project-links {
-                    justify-content: center;
+                    justify-content: flex-start;
+                    display: flex !important;
                 }
 
                 .project-link {
                     font-size: 0.9rem;
+                    color: var(--primary-blue) !important;
+                    display: flex !important;
+                }
+
+                .project-image {
+                    height: 150px;
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 2.5rem;
                 }
             }
 
@@ -891,16 +973,58 @@
                 }
 
                 .project-card {
-                    margin: 0 0.5rem 1rem 0.5rem;
+                    margin: 0 0 1rem 0;
+                    width: 100%;
+                    display: block !important;
+                    background: white !important;
+                    border: 1px solid var(--gray-200) !important;
+                    border-radius: 15px !important;
+                    overflow: hidden;
                 }
 
                 .projects-grid {
+                    grid-template-columns: 1fr !important;
                     gap: 1rem;
                     padding: 0;
+                    display: grid !important;
                 }
 
                 .container {
-                    padding: 0 0.5rem;
+                    padding: 0 1rem;
+                    max-width: 100%;
+                }
+
+                /* 実績セクション専用の調整 */
+                #projects {
+                    background: white !important;
+                    padding: 4rem 1rem !important;
+                    display: flex !important;
+                    flex-direction: column;
+                    align-items: center;
+                    min-height: auto !important;
+                }
+
+                #projects .container {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    display: block !important;
+                }
+
+                #projects .section-header {
+                    margin-bottom: 2rem !important;
+                    display: block !important;
+                }
+
+                #projects .projects-grid {
+                    display: block !important;
+                    width: 100%;
+                }
+
+                #projects .project-card {
+                    margin-bottom: 1.5rem !important;
+                    display: block !important;
+                    width: 100% !important;
+                    box-sizing: border-box;
                 }
             }
 
@@ -984,7 +1108,7 @@
                     <div class="about-grid">
                         <div class="about-image">
                             <img
-                                src="kmr.png"
+                                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjZjhmOWZhIi8+CjxwYXRoIGQ9Ik0yNTAgNTBDMzMxLjA3NCA1MCA0MDAgMTE4LjkyNiA0MDAgMjAwVjMwMEM0MDAgMzgxLjA3NCAzMzEuMDc0IDQ1MCAyNTAgNDUwQzE2OC45MjYgNDUwIDEwMCAzODEuMDc0IDEwMCAzMDBWMjAwQzEwMCAxMTguOTI2IDE2OC45MjYgNTAgMjUwIDUwWiIgZmlsbD0iI2Y5ZmJmZiIgc3Ryb2tlPSIjZTJlOGYwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iMjAwIiBjeT0iMjIwIiByPSIyMCIgZmlsbD0iIzY0NzQ4YiIvPgo8Y2lyY2xlIGN4PSIzMDAiIGN5PSIyMjAiIHI9IjIwIiBmaWxsPSIjNjQ3NDhiIi8+CjxwYXRoIGQ9Ik0yMDAgMjgwUTI1MCAzMDAgMzAwIDI4MCIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K"
                                 alt="村馬弘一のプロフィール写真"
                                 class="profile-image"
                             />
@@ -1010,7 +1134,7 @@
                                     <span class="stat-label">習得技術</span>
                                 </div>
                                 <div class="stat-item">
-                                    <span class="stat-number">3+</span>
+                                    <span class="stat-number">6+</span>
                                     <span class="stat-label">開発経験年数</span>
                                 </div>
                                 <div class="stat-item">
@@ -1202,7 +1326,7 @@
                                 <p class="project-description">
                                     Exa Kids
                                     2019/2020にファイナリストとして選出。
-                                    日本の若手開発者向けの権威あるプログラミング競技会での快挙。
+                                    日本の若手開発者向けの権威あるプログラミング競技会。
                                 </p>
                                 <div class="project-tags">
                                     <span class="tag">ファイナリスト</span>
@@ -1240,7 +1364,7 @@
                                     JavaScript ゲーム開発
                                 </h3>
                                 <p class="project-description">
-                                    若年期にJavaScriptで示した卓越したゲーム開発スキルが
+                                    若年期にJavaScriptで示したゲーム開発スキルが
                                     Progateの成功事例として特集されました。
                                 </p>
                                 <div class="project-tags">
@@ -1445,7 +1569,6 @@
         <footer class="footer">
             <div class="container">
                 <p>&copy; 2025 村馬 弘一. All rights reserved.</p>
-                <p>情熱と最新のWeb技術で構築</p>
             </div>
         </footer>
 
