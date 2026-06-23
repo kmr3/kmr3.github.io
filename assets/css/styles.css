@@ -35,6 +35,19 @@ body {
     overflow-x: hidden;
 }
 
+body,
+p,
+h1,
+h2,
+h3,
+li,
+a,
+span,
+strong,
+div {
+    overflow-wrap: break-word;
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -59,6 +72,12 @@ body::before {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
 }
 
 img {
@@ -138,6 +157,21 @@ img {
     width: 18px;
     height: 2px;
     background: var(--text);
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.mobile-menu-btn[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-btn[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 main {
@@ -489,6 +523,11 @@ main {
 }
 
 @media (max-width: 768px) {
+    .container,
+    .nav-container {
+        width: min(var(--max), calc(100vw - 3rem));
+    }
+
     .navbar {
         padding: 0.8rem 0;
     }
@@ -521,15 +560,48 @@ main {
 
     .hero {
         min-height: auto;
+        padding-top: 6.5rem;
     }
 
     .hero-title {
-        font-size: 3.4rem;
+        font-size: clamp(2.75rem, 13.5vw, 3.4rem);
+        letter-spacing: -0.04em;
+    }
+
+    .hero-copy,
+    .hero-actions,
+    .hero-aside,
+    .hero-note,
+    .work-item,
+    .contact-card {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .hero-description,
+    .hero-note-value,
+    .work-title,
+    .work-description,
+    .contact-item a {
+        overflow-wrap: anywhere;
+        word-break: break-all;
+        line-break: anywhere;
     }
 
     .hero-actions {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .btn {
+        justify-content: center;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .work-link {
+        white-space: normal;
+        justify-self: start;
     }
 
     .contact-item {

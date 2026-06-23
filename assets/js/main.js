@@ -5,6 +5,15 @@ const reveals = document.querySelectorAll(".reveal");
 const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
 const navMenu = document.querySelector(".nav-menu");
 
+const setMobileMenuOpen = (isOpen) => {
+    navMenu.classList.toggle("active", isOpen);
+    mobileMenuBtn?.setAttribute("aria-expanded", String(isOpen));
+    mobileMenuBtn?.setAttribute(
+        "aria-label",
+        isOpen ? "メニューを閉じる" : "メニューを開く",
+    );
+};
+
 const updateNav = () => {
     let current = "hero";
 
@@ -26,15 +35,21 @@ const updateNav = () => {
 
 navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
+        setMobileMenuOpen(false);
     });
 });
 
 if (mobileMenuBtn) {
     mobileMenuBtn.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
+        setMobileMenuOpen(!navMenu.classList.contains("active"));
     });
 }
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+    }
+});
 
 const observer = new IntersectionObserver(
     (entries) => {
