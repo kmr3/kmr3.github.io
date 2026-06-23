@@ -229,6 +229,14 @@ main {
     margin-bottom: 1.2rem;
 }
 
+.hero-kicker {
+    color: var(--accent);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
 .hero-title span {
     display: block;
     color: rgba(242, 237, 230, 0.36);
@@ -305,6 +313,51 @@ main {
 .hero-note-value {
     color: var(--text);
     font-weight: 600;
+}
+
+.hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 3rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.highlight-item {
+    min-width: 0;
+    padding: 1.25rem;
+    border-right: 1px solid var(--line);
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.highlight-item:last-child {
+    border-right: 0;
+}
+
+.highlight-item:hover {
+    background: rgba(255, 255, 255, 0.025);
+    transform: translateY(-2px);
+}
+
+.highlight-item span {
+    display: block;
+    color: var(--accent);
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.highlight-item strong {
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+}
+
+.highlight-item p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
 }
 
 .editorial {
@@ -509,6 +562,7 @@ main {
 
 @media (max-width: 980px) {
     .hero-shell,
+    .hero-highlights,
     .editorial,
     .skills-layout,
     .contact-shell,
@@ -572,6 +626,7 @@ main {
     .hero-actions,
     .hero-aside,
     .hero-note,
+    .highlight-item,
     .work-item,
     .contact-card {
         max-width: 100%;
@@ -580,6 +635,8 @@ main {
 
     .hero-description,
     .hero-note-value,
+    .highlight-item strong,
+    .highlight-item p,
     .work-title,
     .work-description,
     .contact-item a {
@@ -591,6 +648,20 @@ main {
     .hero-actions {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .hero-highlights {
+        margin-top: 2rem;
+    }
+
+    .highlight-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 1rem 0;
+    }
+
+    .highlight-item:last-child {
+        border-bottom: 0;
     }
 
     .btn {
