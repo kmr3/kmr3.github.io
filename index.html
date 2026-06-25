@@ -6,31 +6,32 @@
         <title>村馬 弘一 - Portfolio</title>
         <meta
             name="description"
-            content="村馬弘一のポートフォリオ。Webアプリ、ゲーム制作、コンテスト参加など。"
+            content="村馬弘一のポートフォリオ。Webアプリ、ゲーム制作、コンテスト参加、掲載実績、イベント運営など。"
         />
+        <meta name="theme-color" content="#f4e2c8" />
         <link rel="icon" type="image/png" href="assets/images/kmr.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap"
             rel="stylesheet"
         />
         <script
             src="https://kit.fontawesome.com/a3ad3fe7a4.js"
             crossorigin="anonymous"
         ></script>
-        <link rel="stylesheet" href="assets/css/styles.css" />
+        <link rel="stylesheet" href="assets/css/styles.css?v=recruit-3" />
     </head>
     <body>
         <nav class="navbar" id="navbar">
             <div class="nav-container">
-                <a href="#hero" class="nav-logo">KoichiMurama</a>
+                <a href="#hero" class="nav-logo">Koichi Murama</a>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#hero" class="nav-link active">ホーム</a></li>
-                    <li><a href="#about" class="nav-link">自己紹介</a></li>
-                    <li><a href="#skills" class="nav-link">使えるもの</a></li>
-                    <li><a href="#projects" class="nav-link">実績</a></li>
-                    <li><a href="#contact" class="nav-link">連絡</a></li>
+                    <li><a href="#hero" class="nav-link active">Top</a></li>
+                    <li><a href="#proof" class="nav-link">Proof</a></li>
+                    <li><a href="#cases" class="nav-link">Cases</a></li>
+                    <li><a href="#profile" class="nav-link">Profile</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 <button
                     class="mobile-menu-btn"
@@ -47,385 +48,398 @@
         </nav>
 
         <main>
-            <section class="section hero" id="hero">
-                <div class="container">
-                    <div class="hero-shell">
-                        <div class="hero-copy reveal visible">
-                            <p class="hero-kicker">
-                                奈良工業高等専門学校 在学中
-                            </p>
-                            <h1 class="hero-title">
-                                村馬 弘一
-                                <span>Koichi Murama</span>
-                            </h1>
-                            <p class="hero-subtitle">
-                                Webアプリとゲームを作っています
-                            </p>
-                            <p class="hero-description">
-                                奈良高専で学びながら、Webアプリやゲームを作っています。
-                                コンテスト、掲載、イベント運営など、手を動かして関わってきたことをまとめました。
-                            </p>
-                            <div class="hero-actions">
-                                <a href="#projects" class="btn btn-primary">
-                                    <i class="fas fa-arrow-down"></i>
-                                    実績を見る
-                                </a>
-                                <a href="#contact" class="btn btn-secondary">
-                                    <i class="fas fa-envelope"></i>
-                                    連絡する
-                                </a>
+            <section class="hero section" id="hero">
+                <div class="container hero-grid">
+                    <div class="hero-copy reveal visible">
+                        <p class="eyebrow">Nara Kosen / Web Apps / Game Dev</p>
+                        <h1>実績で語る。</h1>
+                        <p class="hero-lead">
+                            村馬弘一です。Webアプリとゲーム制作を中心に、コンテスト、掲載、イベント運営まで経験してきました。
+                            採用担当の方が最初に確認しやすいように、公開リンクのある外部評価と、面接で深掘りできる材料を前面に置いています。
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#cases" class="btn btn-primary">
+                                <i class="fas fa-arrow-down"></i>
+                                実績を見る
+                            </a>
+                            <a href="mailto:kmrtyan@gmail.com" class="btn btn-secondary">
+                                <i class="fas fa-envelope"></i>
+                                連絡する
+                            </a>
+                        </div>
+                        <div class="hero-stats" aria-label="主な実績">
+                            <div>
+                                <span>NASA Space Apps</span>
+                                <strong>Winner</strong>
+                            </div>
+                            <div>
+                                <span>Progate</span>
+                                <strong>Published</strong>
+                            </div>
+                            <div>
+                                <span>Exa Kids</span>
+                                <strong>Finalist</strong>
+                            </div>
+                            <div>
+                                <span>Codemao</span>
+                                <strong>International</strong>
                             </div>
                         </div>
-                        <aside class="hero-aside reveal visible">
-                            <div class="hero-note">
-                                <span class="hero-note-label">よく作るもの</span>
-                                <div class="hero-note-value">
-                                    Webアプリ / Unity / 小さなゲーム
-                                </div>
-                            </div>
-                            <div class="hero-note">
-                                <span class="hero-note-label">現在</span>
-                                <div class="hero-note-value">
-                                    奈良高専で学びながら、作ったものを少しずつ増やしています。
-                                </div>
-                            </div>
-                            <div class="hero-note">
-                                <span class="hero-note-label">連絡</span>
-                                <div class="hero-note-value">X / Mail</div>
-                            </div>
-                        </aside>
                     </div>
-                    <div class="hero-highlights reveal visible">
+
+                    <aside class="recruit-card reveal visible" aria-label="採用担当者向け要約">
+                        <div class="recruit-card-head">
+                            <span>Interview hooks</span>
+                            <strong>面接で話せる材料</strong>
+                        </div>
+                        <dl>
+                            <div>
+                                <dt>外部評価</dt>
+                                <dd>NASA Space Apps 優勝 / Progate 掲載 / Exa Kids</dd>
+                            </div>
+                            <div>
+                                <dt>制作領域</dt>
+                                <dd>Webアプリ、ブラウザゲーム、Unity試作</dd>
+                            </div>
+                            <div>
+                                <dt>技術</dt>
+                                <dd>JavaScript / Ruby on Rails / PHP / Scala / Unity C#</dd>
+                            </div>
+                            <div>
+                                <dt>姿勢</dt>
+                                <dd>まず動く形にして、公開・発表できるところまで持っていく</dd>
+                            </div>
+                        </dl>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="proof section" id="proof">
+                <div class="container">
+                    <div class="section-head reveal">
+                        <p class="eyebrow">Verified Proof</p>
+                        <h2>「すごそう」ではなく、確認できる実績を先に出す。</h2>
+                    </div>
+                    <div class="proof-board">
                         <a
-                            href="#projects"
-                            class="highlight-item"
-                            aria-label="NASA Space Apps Challenge 優勝の実績へ移動"
+                            href="https://2019.spaceappschallenge.org/challenges/planets-near-and-far/build-planet-workshop/teams/constellator/project"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="proof-item reveal"
                         >
                             <span>01</span>
-                            <strong>NASA Space Apps 優勝</strong>
-                            <p>チームで参加した開発イベントで1位。</p>
+                            <strong>NASA Space Apps Challenge 優勝</strong>
+                            <p>チームで参加した国際開発イベントで1位。</p>
                         </a>
                         <a
-                            href="#projects"
-                            class="highlight-item"
-                            aria-label="Progate 掲載の実績へ移動"
+                            href="https://prog-8.com/success_stories/kmurama"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="proof-item reveal"
                         >
                             <span>02</span>
                             <strong>Progate 成功事例掲載</strong>
                             <p>JavaScriptで作ったゲームについて掲載。</p>
                         </a>
                         <a
-                            href="#projects"
-                            class="highlight-item"
-                            aria-label="Exa Kids ファイナリストの実績へ移動"
+                            href="https://exa-kids.org/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="proof-item reveal"
                         >
                             <span>03</span>
                             <strong>Exa Kids ファイナリスト</strong>
                             <p>プログラミング競技会でファイナリストに選出。</p>
                         </a>
+                        <a
+                            href="https://twitter.com/CodeGameforKids/status/1209360500783505408"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="proof-item reveal"
+                        >
+                            <span>04</span>
+                            <strong>Codemao 国際競技会</strong>
+                            <p>Codemao 2019国際プログラミング競技会に参加。</p>
+                        </a>
                     </div>
                 </div>
             </section>
 
-            <section class="section" id="about">
+            <section class="section" id="cases">
                 <div class="container">
-                    <div class="editorial reveal">
-                        <div class="portrait-wrap">
-                            <div class="portrait-frame">
-                                <img
-                                    src="assets/images/kmr.png"
-                                    alt="村馬弘一のプロフィール写真"
-                                />
-                            </div>
-                            <p class="portrait-caption">
-                                奈良高専で学びながら、Webアプリやゲームを作っています。
-                            </p>
-                        </div>
-                        <div>
-                            <div class="section-label">自己紹介</div>
-                            <h2 class="section-title">自己紹介</h2>
-                            <p class="section-subtitle">
-                                学校で学びつつ、気になったものを作って試しています
-                            </p>
-                            <div class="text-block">
-                                <h3>ソフトウェアエンジニア</h3>
-                                <p>
-                                    2007年生まれ。奈良工業高等専門学校に在学中です。
-                                    小学生のころからプログラミングに触れ、コンテストや開発イベントにも参加してきました。
-                                </p>
-                                <p>
-                                    JavaScript、Ruby、Scala、PHPなどを使ってきました。
-                                    WebアプリとUnityでのゲーム制作が多めです。まず動く形にして、そこから直していく作り方が好きです。
-                                </p>
-                                <div class="profile-points">
-                                    <div>
-                                        <span>School</span>
-                                        <strong>奈良高専 在学中</strong>
-                                    </div>
-                                    <div>
-                                        <span>Build</span>
-                                        <strong>Web / Game</strong>
-                                    </div>
-                                    <div>
-                                        <span>Style</span>
-                                        <strong>まず動く形へ</strong>
-                                    </div>
+                    <div class="section-head reveal">
+                        <p class="eyebrow">Case Studies</p>
+                        <h2>主な実績を、成果・役割・技術で判断できる形にする。</h2>
+                    </div>
+
+                    <div class="case-list">
+                        <article class="case-item featured-case reveal">
+                            <div class="case-index">01</div>
+                            <div class="case-body">
+                                <div class="case-meta">
+                                    <span>Winner</span>
+                                    <span>Team Development</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="skills">
-                <div class="container">
-                    <div class="skills-layout reveal">
-                        <div class="skills-side">
-                            <div class="section-label">使えるもの</div>
-                            <h2 class="section-title">使えるもの</h2>
-                            <p class="section-subtitle">
-                                よく使う言語や、作ってきた分野
-                            </p>
-                        </div>
-                        <div class="skills-listing">
-                            <div class="skill-group">
-                                <h3>フロントエンド開発</h3>
+                                <h3>NASA Space Apps Challenge 優勝</h3>
                                 <p>
-                                    HTML/CSS/JavaScriptで、ブラウザ上でちゃんと動く画面を作ります。
+                                    串本で開催されたNASA Space Apps Challengeにチームで参加し、1位を獲得しました。
+                                    限られた時間の中で、企画から成果物として見せるところまで進めた経験です。
                                 </p>
-                                <ul>
-                                    <li>HTML & CSS</li>
-                                    <li>JavaScript</li>
-                                </ul>
-                            </div>
-                            <div class="skill-group">
-                                <h3>バックエンド開発</h3>
-                                <p>
-                                    Rails、PHP、Scalaなどで、Webアプリの裏側も触ってきました。
-                                </p>
-                                <ul>
-                                    <li>Ruby on Rails</li>
-                                    <li>PHP</li>
-                                    <li>Scala</li>
-                                </ul>
-                            </div>
-                            <div class="skill-group">
-                                <h3>ゲーム開発</h3>
-                                <p>
-                                    UnityやJavaScriptで、まず遊べるところまで作るのが好きです。
-                                </p>
-                                <ul>
-                                    <li>Unity (C#)</li>
-                                    <li>ゲームデザイン</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section" id="projects">
-                <div class="container">
-                    <div class="reveal">
-                        <div class="works-head">
-                            <div class="section-label">主な実績</div>
-                            <h2 class="section-title">プロジェクトと実績</h2>
-                            <p class="section-subtitle">
-                                参加したコンテスト、掲載、イベント運営など
-                            </p>
-                        </div>
-                        <div class="featured-works">
-                            <article class="featured-work">
-                                <div class="featured-work-top">
-                                    <span class="work-year">国際大会</span>
-                                    <i class="fas fa-trophy"></i>
-                                </div>
-                                <h3 class="work-title">
-                                    NASA Space Apps Challenge 優勝
-                                </h3>
-                                <p class="work-description">
-                                    串本で開催されたNASA Space Apps
-                                    Challengeにチームで参加し、1位を獲得しました。
-                                </p>
-                                <div class="work-tags">
-                                    <span>国際大会優勝</span>
-                                    <span>NASA</span>
-                                    <span>チーム開発</span>
+                                <div class="case-points">
+                                    <div>
+                                        <span>Result</span>
+                                        <strong>チームで1位</strong>
+                                    </div>
+                                    <div>
+                                        <span>Role</span>
+                                        <strong>チーム開発に参加</strong>
+                                    </div>
+                                    <div>
+                                        <span>Value</span>
+                                        <strong>短期間で形にする経験</strong>
+                                    </div>
                                 </div>
                                 <a
                                     href="https://2019.spaceappschallenge.org/challenges/planets-near-and-far/build-planet-workshop/teams/constellator/project"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="work-link"
+                                    class="text-link"
                                 >
                                     プロジェクトを見る
                                 </a>
-                            </article>
-                            <article class="featured-work">
-                                <div class="featured-work-top">
-                                    <span class="work-year">掲載</span>
-                                    <i class="fas fa-gamepad"></i>
+                            </div>
+                        </article>
+
+                        <article class="case-item reveal">
+                            <div class="case-index">02</div>
+                            <div class="case-body">
+                                <div class="case-meta">
+                                    <span>Published</span>
+                                    <span>JavaScript Game</span>
                                 </div>
-                                <h3 class="work-title">JavaScript ゲーム開発</h3>
-                                <p class="work-description">
-                                    JavaScriptで作ったゲームについて、
-                                    Progateの成功事例で紹介されました。
+                                <h3>JavaScript ゲーム開発 / Progate 掲載</h3>
+                                <p>
+                                    JavaScriptで作ったゲームについて、Progateの成功事例で紹介されました。
+                                    学習した内容を作品に落とし込み、外部から見える形で評価された実績です。
                                 </p>
-                                <div class="work-tags">
-                                    <span>JavaScript</span>
-                                    <span>ゲーム開発</span>
-                                    <span>特集記事</span>
+                                <div class="case-points">
+                                    <div>
+                                        <span>Result</span>
+                                        <strong>成功事例に掲載</strong>
+                                    </div>
+                                    <div>
+                                        <span>Stack</span>
+                                        <strong>JavaScript / HTML / CSS</strong>
+                                    </div>
+                                    <div>
+                                        <span>Value</span>
+                                        <strong>ブラウザで動くゲーム制作</strong>
+                                    </div>
                                 </div>
                                 <a
                                     href="https://prog-8.com/success_stories/kmurama"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="work-link"
+                                    class="text-link"
                                 >
                                     記事を読む
                                 </a>
-                            </article>
-                            <article class="featured-work">
-                                <div class="featured-work-top">
-                                    <span class="work-year">競技会</span>
-                                    <i class="fas fa-code"></i>
+                            </div>
+                        </article>
+
+                        <article class="case-item reveal">
+                            <div class="case-index">03</div>
+                            <div class="case-body">
+                                <div class="case-meta">
+                                    <span>Finalist</span>
+                                    <span>Programming Contest</span>
                                 </div>
-                                <h3 class="work-title">Exa Kids ファイナリスト</h3>
-                                <p class="work-description">
-                                    Exa Kids 2019/2020にファイナリストとして選出。
-                                    プログラミング競技会でファイナリストになりました。
+                                <h3>Exa Kids 2019/2020 ファイナリスト</h3>
+                                <p>
+                                    Exa Kids 2019/2020にファイナリストとして選出されました。
+                                    早い時期から作品を作り、コンテストに出してきたことが分かる実績です。
                                 </p>
-                                <div class="work-tags">
-                                    <span>ファイナリスト</span>
-                                    <span>プログラミング</span>
-                                    <span>コンテスト</span>
+                                <div class="case-points">
+                                    <div>
+                                        <span>Result</span>
+                                        <strong>ファイナリスト選出</strong>
+                                    </div>
+                                    <div>
+                                        <span>Field</span>
+                                        <strong>プログラミング / 作品制作</strong>
+                                    </div>
+                                    <div>
+                                        <span>Value</span>
+                                        <strong>作品を外に出す経験</strong>
+                                    </div>
                                 </div>
                                 <a
                                     href="https://exa-kids.org/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="work-link"
+                                    class="text-link"
                                 >
                                     詳細を見る
                                 </a>
-                            </article>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="profile-section section" id="profile">
+                <div class="container profile-grid">
+                    <div class="portrait-card reveal">
+                        <img src="assets/images/kmr.png" alt="村馬弘一のプロフィール写真" />
+                        <div>
+                            <strong>Koichi Murama</strong>
+                            <span>奈良工業高等専門学校 在学中</span>
                         </div>
-                        <div class="timeline-block">
-                            <h3>これまでの流れ</h3>
-                            <div class="timeline-list">
-                                <article class="timeline-item">
-                                    <span>2019</span>
-                                    <div>
-                                        <h4>プログラミング優秀賞</h4>
-                                        <p>
-                                            全国子どもみらいグランプリ競技会のプログラミング部門で優秀賞を受賞。
-                                        </p>
-                                        <a
-                                            href="https://kids.valed.jp/about/grandprix/grandprix2019/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            >詳細を見る</a
-                                        >
-                                    </div>
-                                </article>
-                                <article class="timeline-item">
-                                    <span>2019</span>
-                                    <div>
-                                        <h4>Scratch 全国大会</h4>
-                                        <p>
-                                            GPリーグScratch部門の全国決勝に進出。
-                                        </p>
-                                        <a
-                                            href="https://gpleague.jp/1584/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            >大会情報</a
-                                        >
-                                    </div>
-                                </article>
-                                <article class="timeline-item">
-                                    <span>2019</span>
-                                    <div>
-                                        <h4>国際プログラミング競技</h4>
-                                        <p>
-                                            Codemao 2019国際プログラミング競技会に参加。
-                                        </p>
-                                        <a
-                                            href="https://twitter.com/CodeGameforKids/status/1209360500783505408"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            >詳細を見る</a
-                                        >
-                                    </div>
-                                </article>
-                                <article class="timeline-item">
-                                    <span>運営</span>
-                                    <div>
-                                        <h4>
-                                            高専カンファレンス in 佐世保&奈良 運営
-                                        </h4>
-                                        <p>
-                                            佐世保と奈良の2会場で行うイベントの運営に参加。
-                                        </p>
-                                        <a
-                                            href="https://sites.google.com/view/kosenconf155"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            >詳細を見る</a
-                                        >
-                                    </div>
-                                </article>
+                    </div>
+
+                    <div class="profile-main reveal">
+                        <p class="eyebrow">Profile & Skills</p>
+                        <h2>Webとゲームを中心に、動くものを作る。</h2>
+                        <p>
+                            2007年生まれ。小学生のころからプログラミングに触れ、コンテストや開発イベントにも参加してきました。
+                            JavaScript、Ruby、Scala、PHP、Unity C#などを使ってきました。
+                        </p>
+                        <div class="skill-columns">
+                            <div>
+                                <h3>フロントエンド</h3>
+                                <p>HTML/CSS/JavaScriptで、ブラウザ上で動く画面やゲームを制作。</p>
+                            </div>
+                            <div>
+                                <h3>バックエンド</h3>
+                                <p>Rails、PHP、Scalaなど、Webアプリの裏側にも触れてきました。</p>
+                            </div>
+                            <div>
+                                <h3>ゲーム制作</h3>
+                                <p>UnityやJavaScriptで、まず遊べるところまで作るのが好きです。</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="section" id="contact">
-                <div class="container">
-                    <div class="reveal">
-                        <div class="section-label">連絡</div>
-                        <h2 class="section-title">連絡</h2>
-                        <p class="section-subtitle">
-                            連絡はXかメールからお願いします
-                        </p>
-                        <div class="contact-shell">
-                            <div class="contact-list">
-                                <div class="contact-item">
-                                    <strong>X</strong>
-                                    <div>
-                                        <span>DMはこちらから</span><br />
-                                        <a
-                                            href="https://twitter.com/kmr3rnu"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            >@kmr3rnu</a
-                                        >
-                                    </div>
-                                </div>
-                                <div class="contact-item">
-                                    <strong>メール</strong>
-                                    <div>
-                                        <span>メールはこちら</span><br />
-                                        <a href="mailto:kmrtyan@gmail.com"
-                                            >kmrtyan@gmail.com</a
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact-card">
-                                <p>
-                                    相談や連絡はメールが確実です。短い内容でも大丈夫です。
-                                </p>
+            <section class="history-section section">
+                <div class="container history-grid reveal">
+                    <div>
+                        <p class="eyebrow">History</p>
+                        <h2>継続して作り、外に出してきた経験</h2>
+                    </div>
+                    <div class="history-list">
+                        <article>
+                            <span>2019</span>
+                            <div>
+                                <h3>全国子どもみらいグランプリ 優秀賞</h3>
+                                <p>プログラミング部門で優秀賞を受賞。</p>
                                 <a
-                                    href="mailto:kmrtyan@gmail.com"
-                                    class="btn btn-primary"
+                                    href="https://kids.valed.jp/about/grandprix/grandprix2019/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >詳細を見る</a
                                 >
-                                    <i class="fas fa-paper-plane"></i>
-                                    メッセージを送る
-                                </a>
                             </div>
-                        </div>
+                        </article>
+                        <article>
+                            <span>2019</span>
+                            <div>
+                                <h3>GPリーグ Scratch部門 全国決勝</h3>
+                                <p>Scratch部門で全国決勝に進出。</p>
+                                <a
+                                    href="https://gpleague.jp/1584/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >大会情報</a
+                                >
+                            </div>
+                        </article>
+                        <article>
+                            <span>2019</span>
+                            <div>
+                                <h3>NASA Space Apps Challenge 優勝</h3>
+                                <p>串本で開催された国際開発イベントにチームで参加し、1位を獲得。</p>
+                                <a
+                                    href="https://2019.spaceappschallenge.org/challenges/planets-near-and-far/build-planet-workshop/teams/constellator/project"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >プロジェクトを見る</a
+                                >
+                            </div>
+                        </article>
+                        <article>
+                            <span>2019</span>
+                            <div>
+                                <h3>Codemao 2019 国際プログラミング競技会</h3>
+                                <p>国際プログラミング競技会に参加。</p>
+                                <a
+                                    href="https://twitter.com/CodeGameforKids/status/1209360500783505408"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >詳細を見る</a
+                                >
+                            </div>
+                        </article>
+                        <article>
+                            <span>2019/2020</span>
+                            <div>
+                                <h3>Exa Kids ファイナリスト</h3>
+                                <p>プログラミング競技会でファイナリストに選出。</p>
+                                <a
+                                    href="https://exa-kids.org/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >詳細を見る</a
+                                >
+                            </div>
+                        </article>
+                        <article>
+                            <span>掲載</span>
+                            <div>
+                                <h3>Progate 成功事例掲載</h3>
+                                <p>JavaScriptで制作したゲームについて、Progateの成功事例で紹介。</p>
+                                <a
+                                    href="https://prog-8.com/success_stories/kmurama"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >記事を読む</a
+                                >
+                            </div>
+                        </article>
+                        <article>
+                            <span>運営</span>
+                            <div>
+                                <h3>高専カンファレンス in 佐世保&amp;奈良 運営</h3>
+                                <p>佐世保と奈良の2会場で行うイベントの運営に参加。</p>
+                                <a
+                                    href="https://sites.google.com/view/kosenconf155"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >詳細を見る</a
+                                >
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section section" id="contact">
+                <div class="container contact-grid reveal">
+                    <div>
+                        <p class="eyebrow">Contact</p>
+                        <h2>連絡</h2>
+                        <p>相談や連絡は、Xまたはメールからお願いします。</p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="https://twitter.com/kmr3rnu" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-x-twitter"></i>
+                            @kmr3rnu
+                        </a>
+                        <a href="mailto:kmrtyan@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                            kmrtyan@gmail.com
+                        </a>
                     </div>
                 </div>
             </section>
@@ -437,6 +451,6 @@
             </div>
         </footer>
 
-        <script src="assets/js/main.js"></script>
+        <script src="assets/js/main.js?v=recruit-2"></script>
     </body>
 </html>
